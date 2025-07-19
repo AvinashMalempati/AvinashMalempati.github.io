@@ -1,10 +1,98 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Avinash Malempati</title>
-</head>
-<body>
-    <h1>Avinash Malempati</h1>
-</body>
-</html>
+// Portfolio Website - Single Page React + Tailwind CSS
+// Main file: App.jsx
+
+import React from 'react';
+import { Link } from 'react-scroll';
+
+export default function App() {
+  return (
+    <div className="font-sans">
+      {/* Navbar */}
+      <nav className="fixed top-0 left-0 w-full bg-white shadow z-50 p-4 flex justify-between items-center">
+        <h1 className="text-xl font-bold">Pavani Pullela</h1>
+        <ul className="flex space-x-4">
+          {['About', 'Skills', 'Projects', 'Certifications', 'Resume', 'Contact'].map((section) => (
+            <li key={section}>
+              <Link to={section.toLowerCase()} smooth={true} duration={500} className="cursor-pointer hover:text-blue-600">
+                {section}
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </nav>
+
+      <div className="pt-24 space-y-32">
+        {/* About */}
+        <section id="about" className="px-8 max-w-4xl mx-auto">
+          <h2 className="text-3xl font-bold mb-4">About Me</h2>
+          <p>
+            I'm a Cybersecurity graduate from Lewis University with a focus on threat detection, network security, and compliance. With hands-on experience as a Cybersecurity Consultant and extensive SOC lab practice on Hack The Box, I am passionate about building secure digital environments.
+          </p>
+        </section>
+
+        {/* Skills */}
+        <section id="skills" className="px-8 max-w-4xl mx-auto">
+          <h2 className="text-3xl font-bold mb-4">Skills</h2>
+          <ul className="list-disc pl-5 space-y-1">
+            <li>Cybersecurity: SOC Analysis, SIEM (Splunk), Threat Detection, Vulnerability Assessment</li>
+            <li>Tools: Wireshark, Snort, Zeek, Nessus, Nmap, ELK Stack, Microsoft Defender</li>
+            <li>Programming: Python, SQL, JavaScript</li>
+            <li>Cloud & Compliance: Microsoft 365 Security & Compliance, Azure fundamentals</li>
+            <li>AI/ML: IDS using Random Forest & Neural Networks</li>
+            <li>Data: Power BI, Tableau, Excel, Data Cleaning & Visualization</li>
+          </ul>
+        </section>
+
+        {/* Projects */}
+        <section id="projects" className="px-8 max-w-4xl mx-auto">
+          <h2 className="text-3xl font-bold mb-4">Projects</h2>
+          <div className="space-y-6">
+            <div>
+              <h3 className="text-xl font-semibold">AI-Powered Intrusion Detection System</h3>
+              <p>
+                Developed a real-time IDS using packet sniffing, XGBoost, and neural networks to detect anomalies and reduce false positives. Integrated dashboard for live monitoring.
+              </p>
+            </div>
+            <div>
+              <h3 className="text-xl font-semibold">Security Onion Home Lab</h3>
+              <p>
+                Built a virtual SOC environment using Security Onion, tested IDS/IPS tools with simulated attacks to understand event correlation.
+              </p>
+            </div>
+            <div>
+              <h3 className="text-xl font-semibold">Data Analyst Dashboard</h3>
+              <p>
+                Used Power BI and Python to analyze user behavior data from an e-commerce platform. Delivered actionable insights for business growth.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* Certifications */}
+        <section id="certifications" className="px-8 max-w-4xl mx-auto">
+          <h2 className="text-3xl font-bold mb-4">Certifications</h2>
+          <ul className="list-disc pl-5 space-y-1">
+            <li>Cisco Cybersecurity Pathway (Networking Basics, Endpoint Security)</li>
+            <li>CAST Cybersecurity (In Progress)</li>
+            <li>Certified SOC Analyst – Hack The Box (In Progress)</li>
+          </ul>
+        </section>
+
+        {/* Resume */}
+        <section id="resume" className="px-8 max-w-4xl mx-auto">
+          <h2 className="text-3xl font-bold mb-4">Resume</h2>
+          <p>You can view or download my resume <a href="/Pavani_Resume.pdf" className="text-blue-600 underline">here</a>.</p>
+        </section>
+
+        {/* Contact */}
+        <section id="contact" className="px-8 max-w-4xl mx-auto pb-20">
+          <h2 className="text-3xl font-bold mb-4">Contact</h2>
+          <p>Email: pullelapavani@gmail.com</p>
+          <p>Phone: (331) 318-9235</p>
+          <p>LinkedIn: <a href="https://www.linkedin.com/in/pavani-pullela" className="text-blue-600 underline">linkedin.com/in/pavani-pullela</a></p>
+          <p>GitHub: <a href="https://github.com/" className="text-blue-600 underline">github.com</a></p>
+        </section>
+      </div>
+    </div>
+  );
+}
